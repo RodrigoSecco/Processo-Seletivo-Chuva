@@ -1,0 +1,213 @@
+.sidebar {
+  width: 15%;
+  height: 100%;
+  border-right: 2px solid rgb(227, 227, 227);
+  position: fixed;
+  box-shadow: 3px 0 5px 0 #e7e7e7;
+}
+
+.gradient {
+  width: 100%;
+  height: 10%;
+  background: linear-gradient(0deg, #ED7839 0%, #FFB455 100%);
+  color: white;
+}
+
+.text-slaca {
+  font-family: "Roboto", sans-serif;
+  padding: 8% 14%;
+}
+
+.list-group-item:hover {
+  background-color: fdf1eb;
+  padding-left: 21px;
+}
+
+.list-group-item:active {
+  background-color: fdf1eb;
+  padding-left: 21px;
+  border-left: 5px solid #ED7839;
+}
+
+header {
+  display: flex;
+  position: static;
+  height: 10%;
+  background-color: #fdf1eb;
+  margin-bottom: 20px;
+  margin-left: 15%;
+}
+
+h1 {
+  margin-left: 40px;
+  font-size: 17px;
+}
+
+h1 span {
+  font-size: 12px;
+}
+
+h2 {
+  margin-left: 27%;
+  font-size: 20px;
+  color: #ED7839;
+}
+
+.header-end {
+  margin-left: 30%;
+  display: flex;
+}
+
+.dropbtn {
+  display: flex;
+  width: 105px;
+  background-color: #fdf1eb;
+  margin: 15px 25px;
+  padding: 10px;
+  font-size: 14px;
+  border-color: rgb(222, 222, 222);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.perfil {
+  margin: 10px;
+  border-radius: 100%;
+}
+
+.actions-wrapper {
+  padding-left: 200px;
+}
+
+.actions-button {
+  display: flex;
+}
+
+.button {
+  background-color: #ED7839;
+  color: white;
+  margin: 5px;
+  height: 40px;
+}
+
+.doi {
+  background-color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  color: #ED7839;
+  border-radius: 100%;
+  width: 25px;
+}
+
+.citar-trabalho {
+  color: #ED7839;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.citar-trabalho:visited {
+  text-decoration: none;
+}
+
+.citar-trabalho:hover {
+  text-decoration: underline;
+  color: #ED7839;
+}
+
+.citar-trabalho:active {
+  text-decoration: underline;
+  color: #ED7839;
+}
+
+video {
+  margin-bottom: 20px;
+  margin-left: 18%;
+  margin-top: 20px;
+  width: 55%;
+  height: 74%;
+}
+
+.card {
+  margin: 30px;
+  margin-left: 18%;
+  padding: 0;
+  width: 80%;
+}
+
+.card-header {
+  background-color: #fdf1eb;
+}
+
+.card-detalhes {
+  width: 20%;
+  float: right;
+  margin: 20px;
+}
+
+.card-text {
+  text-align: start;
+}
+
+h6 {
+  font-size: 20px;
+  color: #ED7839;
+}
+
+.button-criar-topico {
+  color: white;
+  background: linear-gradient(0deg, #ED7839 0%, #FFB455 100%);
+}
+
+.card-pergunta {
+  align-items: left;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px #e7e7e7;
+  margin-top: 20px;
+}
+
+footer {
+  border-top: 1px solid rgb(227, 227, 227);
+  margin-left: 15%;
+  margin-top: 20px;
+  display: flex;
+}
+
+.galoa-logo {
+  margin: 10px 20px 20px 30px;
+}
+
+.saiba-mais {
+  width: 100%;
+  background-color: #71478e;
+  color: white;
+}
+
+.description {
+  margin: 40px 0 0 30px;
+}

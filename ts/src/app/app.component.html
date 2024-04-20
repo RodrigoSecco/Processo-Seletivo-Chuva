@@ -1,0 +1,468 @@
+<head>
+  <title>Chuva</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    .sidebar {
+      width: 15%;
+      height: 100%;
+      border-right: 2px solid rgb(227, 227, 227);
+      position: fixed;
+      box-shadow: 3px 0 5px 0 #e7e7e7;
+    }
+
+    .gradient {
+      width: 100%;
+      height: 10%;
+      background: linear-gradient(0deg, #ED7839 0%, #FFB455 100%);
+      color: white;
+    }
+
+    .text-slaca {
+      font-family: "Roboto", sans-serif;
+      padding: 8% 14%;
+    }
+
+    .list-group-item:hover {
+      background-color: fdf1eb;
+      padding-left: 21px;
+    }
+
+    .list-group-item:active {
+      background-color: fdf1eb;
+      padding-left: 21px;
+      border-left: 5px solid #ED7839;
+    }
+
+    header {
+      display: flex;
+      position: static;
+      height: 10%;
+      background-color: #fdf1eb;
+      margin-bottom: 20px;
+      margin-left: 15%;
+    }
+
+    h1 {
+      margin-left: 40px;
+      font-size: 17px;
+    }
+
+    h1 span {
+      font-size: 12px;
+    }
+
+    h2 {
+      margin-left: 27%;
+      font-size: 20px;
+      color: #ED7839;
+    }
+
+    .header-end {
+      margin-left: 30%;
+      display: flex;
+    }
+
+    .dropbtn {
+      display: flex;
+      width: 105px;
+      background-color: #fdf1eb;
+      margin: 15px 25px;
+      padding: 10px;
+      font-size: 14px;
+      border-color: rgb(222, 222, 222);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .perfil {
+      margin: 10px;
+      border-radius: 100%;
+    }
+
+    .actions-wrapper {
+      padding-left: 200px;
+    }
+
+    .actions-button {
+      display: flex;
+    }
+
+    .button {
+      background-color: #ED7839;
+      color: white;
+      margin: 5px;
+      height: 40px;
+    }
+
+    .doi {
+      background-color: #ffffff;
+      font-family: "Roboto", sans-serif;
+      color: #ED7839;
+      border-radius: 100%;
+      width: 25px;
+    }
+
+    .citar-trabalho {
+      color: #ED7839;
+      text-decoration: none;
+      margin-top: 5px;
+    }
+
+    .citar-trabalho:visited {
+      text-decoration: none;
+    }
+
+    .citar-trabalho:hover {
+      text-decoration: underline;
+      color: #ED7839;
+    }
+
+    .citar-trabalho:active {
+      text-decoration: underline;
+      color: #ED7839;
+    }
+
+    video {
+      margin-bottom: 20px;
+      margin-left: 18%;
+      margin-top: 20px;
+      width: 55%;
+      height: 74%;
+    }
+
+    .card {
+      margin: 30px;
+      margin-left: 18%;
+      padding: 0;
+      width: 80%;
+    }
+
+    .card-header {
+      background-color: #fdf1eb;
+    }
+
+    .card-detalhes {
+      width: 20%;
+      float: right;
+      margin: 20px;
+    }
+
+    .card-text {
+      text-align: start;
+    }
+
+    h6 {
+      font-size: 20px;
+      color: #ED7839;
+    }
+
+    .button-criar-topico {
+      color: white;
+      background: linear-gradient(0deg, #ED7839 0%, #FFB455 100%);
+    }
+
+    .card-pergunta {
+      align-items: left;
+      border: 1px solid rgb(210, 210, 210);
+      border-radius: 5px;
+      box-shadow: 0px 0px 8px #e7e7e7;
+      margin-top: 20px;
+    }
+
+    footer {
+      border-top: 1px solid rgb(227, 227, 227);
+      margin-left: 15%;
+      margin-top: 20px;
+      display: flex;
+    }
+
+    .galoa-logo {
+      margin: 10px 20px 20px 30px;
+    }
+
+    .saiba-mais {
+      width: 100%;
+      background-color: #71478e;
+      color: white;
+    }
+
+    .description {
+      margin: 40px 0 0 30px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="gradient">
+      <h3 class="text-slaca">SLACA 2019</h3>
+    </div>
+
+    <nav class="sidebar-body" id="main-menu">
+      <div class="series-logo bg-lighten my-md">
+        <div class="field field--name-teaser-logo field--type-image field--label-hidden field--item">
+          <img loading="lazy" src="../assets/Logo 400x400_0.png" width="220" height="220" alt="SLACA 2019"
+            class="img-responsive">
+        </div>
+      </div>
+      <div class="menu">
+        <div class="list-group">
+          <button type="button" class="list-group-item list-group-item-action">
+            Apresentação
+          </button>
+          <button type="button" class="list-group-item list-group-item-action">Comitês</button>
+          <button type="button" class="list-group-item list-group-item-action">Autores</button>
+          <button type="button" class="list-group-item list-group-item-action">Eixos temáticos</button>
+          <button type="button" class="list-group-item list-group-item-action">Trabalhos</button>
+          <button type="button" class="list-group-item list-group-item-action">Contato</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="expand flex-col">
+    <header>
+      <div class="flex-col expand">
+        <div class="flex-col expand">
+          <h1 class="series-title">
+            <span>Anais do Simpósio Latino Americano de Ciências de Alimentos</span>
+            <br>
+            Anais do 13º Simpósio Latino Americano de Ciência de Alimentos
+            <br>
+            <span class="series-issn">ISSN: 2447-2840</span>
+          </h1>
+        </div>
+      </div>
+      <div class="header-end">
+        <div class="dropdown">
+          <button class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-globe me-1 mt-1" viewBox="0 0 16 16">
+              <path
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z" />
+            </svg>PT-BR<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-caret-down-fill ms-1 mt-1" viewBox="0 0 16 16">
+              <path
+                d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+            </svg></button>
+          <div class="dropdown-content">
+            <a href="#">Inglês</a>
+            <a href="#">Português, Brasil</a>
+          </div>
+        </div>
+
+        <div class="user-menu-wrapper ">
+          <p>Bem Vindo!</p>
+          <p>rodrigosdn94@gmail.com</p>
+        </div>
+        <img src="../assets/0d9b9408-cc53-437d-8fb1-7176c043b64f.jpg" width="45" height="45" alt="Perfil"
+          class="img-responsive perfil">
+      </div>
+    </header>
+    <section class="main" role="main">
+      <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-8 proceedings-paper-full mb-sm">
+          <h2 class="title"> Análise sensorial de preparações funcionais desenvolvidas para
+            escolares entre 09 e 15 anos, do município de Campinas/SP
+          </h2>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 actions-wrapper">
+          <div class="actions-button">
+            <div class="region region-paper-actions-major">
+              <button class="btn button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                  <path
+                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                  <path
+                    d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+                </svg>
+                Download</button>
+            </div>
+            <div class="region region-paper-actions-minor">
+              <button class="btn button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+              </button>
+            </div>
+            <div>
+              <button class="btn button">
+                <div class="doi"> doi </div>
+              </button>
+            </div>
+          </div>
+          <div>
+            <h5 class="citar-trabalho">
+              <a href="#" class="modal-trigger citar-trabalho" data-target="#citations"> Como citar esse trabalho? </a>
+            </h5>
+          </div>
+        </div>
+
+      </div>
+
+      <div>
+        <video controls>
+          <source src="" type="video/mp4">
+          <source src="" type="video/ogg">
+          Your browser does not support HTML video.
+        </video>
+
+        <div class="card-detalhes card">
+          <h5 class="card-header">Detalhes</h5>
+          <div class="card-body">
+            <ul class="list list-unstyled">
+              <li>Tipo de Apresentação: <strong>Pôster</strong></li>
+              <li>Eixo temático: <strong>Alimentação e saúde(AS)</strong></li>
+              <li>Palavras-chaves: <strong>Alinmentos funcionais, alimentação escolar</strong></li>
+            </ul>
+            <ul class="list list-unstyled">
+              <li><strong>Autores:</strong></li>
+              <li>Galileo Galilei<sup>1</sup></li>
+              <li>Berta Lange de Morretes<sup>2</sup></li>
+              <li>Isaac Newton<sup>3</sup></li>
+              <li>Cesar Lattes<sup>4</sup></li>
+              <li>Stephen Hawking<sup>5</sup></li>
+            </ul>
+            <ul class="list list-unstyled">
+              <li><sup id="institution1">1</sup> Faculdade de Ciências Aplicadas / Universidade Estadual de
+                Campinas</li>
+              <li><sup id="institution2">2</sup> Faculdade de Engenharia de Alimentos / Universidade Estadual de
+                Campinas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-md">
+        <div class="card">
+          <h5 class="card-header">Resumo</h5>
+          <div class="card-body" style="text-align: center;">
+            <p class="card-text">Alimentos funcionais podem promover saudabilidade a cardápios escolares. Este
+              trabalho objetivou
+              avaliar aceitabilidade de preparações funcionais por escolares de Campinas/SP. Adaptaram-se receitas
+              convencionalmente servidas no município empregando-se ingredientes funcionais e redução de açúcar,
+              obtendo-se as formulações: bolo de laranja com biomassa de banana verde, gelatina com suco de uva
+              integral, creme de abacate 32% cacau e salada de frutas com yacon. Analisou-se: concentração de
+              fenóis segundo Folin-Ciocalteau e capacidade antioxidante por ABTS, FRAP, DPPH, comparando-se com
+              preparações convencionais; teor de frutanos utilizando-se kit enzimático Megazyme®; capacidade
+              probiótica inoculando-se Lactobacillus acidophilus La5 e Bifidobacterium bifidum BB12 em meios de
+              cultura MRS substituindo a fonte de açúcar pelo ingrediente cuja atividade probiótica buscou-se
+              determinar. Aplicou-se teste de aceitabilidade por resto-ingestão e escala hedônica. Constatou-se
+              diferença (p&lt;0,01) no teor de fenóis de creme e gelatina, obtendo-se respectivamente para
+              receitas convencionais e funcionais 602±182,9 e 1878±195,3 para gelatina e 1167,6±34,7 e
+              2803,6±512,9 para creme expressos em µg Eq AG/g de amostra, refletindo maior atividade antioxidante
+              em ABTS, FRAP e DPPH. Biomassa e yacon demonstraram teor de frutanos de 0,17g/100 e 40,74g/100g. A
+              contagem de BB12 e La5 foram respectivamente 9,0x10¹¹ e 3,1x10¹¹ UFC/mL no meio contendo biomassa e
+              5,33x10¹¹ e 6,33x1010 UFC/mL em meio contendo yacon. Aprovou-se bolo de laranja e salada de frutas
+              na análise de restos e escala hedônica, obtendo-se respectivamente, 98,27% e 91,26% para a primeira
+              preparação e 91,86% e 89,93% para a segunda. Comentários na ficha de escala hedônica mostraram que o
+              paladar condicionado ao sabor excessivamente doce e expectativa de experimentar receitas semelhantes
+              às convencionais culminaram neste desfecho. Conclui-se que a inserção de ingredientes funcionais em
+              receitas com as quais os alunos estavam familiarizados não garantiu a aceitabilidade de todas as
+              formulações. Estratégias de educação alimentar e nutricional concomitantes à oferta de alimentação
+              saudável mostram-se necessárias.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h5 class="card-header">Discussões</h5>
+          <div class="card-body" style="text-align: center;">
+            <h6 class="card-text">Compartilhe suas ideias ou dúvidas com os autores</h6>
+            <p>Sabia que o maior estímulo no desenvolvimento científico é a curiosidade? Deixe seus questionamentos ou
+              sugestões para o autor!</p>
+            <button class="btn button-criar-topico"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+              </svg> criar tópico</button>
+            <div class="card-pergunta">
+              <div class="card-body" style="text-align: start; padding-left: 25px;">
+                <h6 class="card-title">Assunto da pergunta aparece aqui</h6>
+                <p class="card-subtitle mb-2 text-body-secondary">Carlos Henrique Santos</p>
+                <p class="card-text">Comecinho da pergunta aparece aqui resente relato inscreve-se no campo da análise
+                  da dimensão e impacto de processo formativo situado impacto de processo formativo processo...</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" color="#ED7839" fill="currentColor"
+                  class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" color="#ED7839" fill="currentColor"
+                  class="bi bi-chat-left-heart-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
+                </svg>
+                <a href="#" class="card-link"
+                  style="text-decoration: none; color: rgb(99, 99, 99); margin-left: 10px;">1 like</a>
+                <a href="#" class="card-link" style="text-decoration: none; color: rgb(99, 99, 99);">1 resposta</a>
+              </div>
+            </div>
+            <div class="card-pergunta">
+              <div class="card-body" style="text-align: start; padding-left: 25px;">
+                <h6 class="card-title">Assunto da pergunta aparece aqui</h6>
+                <p class="card-subtitle mb-2 text-body-secondary">Carlos Henrique Santos</p>
+                <p class="card-text">Comecinho da pergunta aparece aqui resente relato inscreve-se no campo da análise
+                  da dimensão e impacto de processo formativo situado impacto de processo formativo processo...</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" color="#ED7839" fill="currentColor"
+                  class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" color="#ED7839" fill="currentColor"
+                  class="bi bi-chat-left-heart-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
+                </svg>
+                <a href="#" class="card-link"
+                  style="text-decoration: none; color: rgb(99, 99, 99); margin-left: 10px;">1 like</a>
+                <a href="#" class="card-link" style="text-decoration: none; color: rgb(99, 99, 99);">1 resposta</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="galoa-logo">
+        <div><img alt="Galoá logo" src="../assets/galoa-logo.svg" width="200" height="100"></div>
+        <div><button class="btn saiba-mais">Saiba mais</button></div>
+      </div>
+      <div class="description p-md">
+        <p><strong>Preservar a memória do evento e ampliar o acesso ao conhecimento ciêntifico</strong> gerado em
+          eventos é a razão de ser da plataforma Galoá Proceedings. </p>
+        <p>Os trabalhos publicados aqui tem maior alcance e ficam disponíveis para toda a comunidade cietífica, mantendo
+          aceso o debate científico fomentado pelos encontros e aumentando o impacto do evento.</p>
+      </div>
+    </footer>
+  </div>
+</body>
