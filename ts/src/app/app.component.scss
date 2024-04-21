@@ -169,8 +169,23 @@ video {
   margin: 20px;
 }
 
+.card-resume {
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.ver-mais {
+  color: #ED7839;
+  cursor: pointer;
+}
+
 .card-text {
   text-align: start;
+}
+
+.card-body.expandido {
+  max-height: none;
+  overflow: visible;
 }
 
 h6 {
@@ -183,12 +198,48 @@ h6 {
   background: linear-gradient(0deg, #ED7839 0%, #FFB455 100%);
 }
 
+.btn-enviar {
+  position: absolute;
+  right: 0;
+  width: 250px;
+  height: 40px;
+  background: linear-gradient(0deg, #ED7839 0%, #FFB455 100%);
+  color: white;
+  border: none;
+}
+
+.div-enviar {
+  height: 40px;
+  position: relative;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(210, 210, 210);
+}
+
+.btn-criar-novo-topico {
+  border-radius: 5px;
+  margin-top: 50px;
+  width: 250px;
+  height: 40px;
+  background: linear-gradient(0deg, #ED7839 0%, #FFB455 100%);
+  color: white;
+  border: none;
+}
+
+.aguardando-feedback {
+  margin-top: 20px;
+  padding: 35px;
+  border: 1px solid rgb(210, 210, 210);
+  box-shadow: 0px 0px 8px #e7e7e7;
+  background-color: rgb(240, 240, 240);
+}
+
 .card-pergunta {
   align-items: left;
   border: 1px solid rgb(210, 210, 210);
   border-radius: 5px;
   box-shadow: 0px 0px 8px #e7e7e7;
   margin-top: 20px;
+
 }
 
 footer {
