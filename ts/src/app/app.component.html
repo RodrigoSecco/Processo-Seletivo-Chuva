@@ -174,8 +174,23 @@
       margin: 20px;
     }
 
+    .card-resume {
+      max-height: 500px;
+      overflow: hidden;
+    }
+
+    .ver-mais {
+      color: #ED7839;
+      cursor: pointer;
+    }
+
     .card-text {
       text-align: start;
+    }
+
+    .card-body.expandido {
+      max-height: none;
+      overflow: visible;
     }
 
     h6 {
@@ -366,8 +381,9 @@
       <div class="row mb-md">
         <div class="card">
           <h5 class="card-header">Resumo</h5>
-          <div class="card-body" style="text-align: center;">
-            <p class="card-text">Alimentos funcionais podem promover saudabilidade a cardápios escolares. Este
+          <div class="card-body card-resume" style="text-align: center;" #resumo>
+            <p class="card-text" id="resumo">Alimentos funcionais podem promover saudabilidade a cardápios escolares.
+              Este
               trabalho objetivou
               avaliar aceitabilidade de preparações funcionais por escolares de Campinas/SP. Adaptaram-se receitas
               convencionalmente servidas no município empregando-se ingredientes funcionais e redução de açúcar,
@@ -377,22 +393,31 @@
               preparações convencionais; teor de frutanos utilizando-se kit enzimático Megazyme®; capacidade
               probiótica inoculando-se Lactobacillus acidophilus La5 e Bifidobacterium bifidum BB12 em meios de
               cultura MRS substituindo a fonte de açúcar pelo ingrediente cuja atividade probiótica buscou-se
-              determinar. Aplicou-se teste de aceitabilidade por resto-ingestão e escala hedônica. Constatou-se
-              diferença (p&lt;0,01) no teor de fenóis de creme e gelatina, obtendo-se respectivamente para
-              receitas convencionais e funcionais 602±182,9 e 1878±195,3 para gelatina e 1167,6±34,7 e
-              2803,6±512,9 para creme expressos em µg Eq AG/g de amostra, refletindo maior atividade antioxidante
-              em ABTS, FRAP e DPPH. Biomassa e yacon demonstraram teor de frutanos de 0,17g/100 e 40,74g/100g. A
-              contagem de BB12 e La5 foram respectivamente 9,0x10¹¹ e 3,1x10¹¹ UFC/mL no meio contendo biomassa e
-              5,33x10¹¹ e 6,33x1010 UFC/mL em meio contendo yacon. Aprovou-se bolo de laranja e salada de frutas
-              na análise de restos e escala hedônica, obtendo-se respectivamente, 98,27% e 91,26% para a primeira
-              preparação e 91,86% e 89,93% para a segunda. Comentários na ficha de escala hedônica mostraram que o
-              paladar condicionado ao sabor excessivamente doce e expectativa de experimentar receitas semelhantes
-              às convencionais culminaram neste desfecho. Conclui-se que a inserção de ingredientes funcionais em
-              receitas com as quais os alunos estavam familiarizados não garantiu a aceitabilidade de todas as
-              formulações. Estratégias de educação alimentar e nutricional concomitantes à oferta de alimentação
-              saudável mostram-se necessárias.</p>
+              determinar. Aplicou-se teste de aceitabilidade por resto-ingestão e escala hedônica.<span
+                id="complete-text">...</span><span class="ver-mais" onclick="verMais()" id="ver-mais"> ver mais</span>
+            </p>
           </div>
         </div>
+
+        <script>
+          function verMais() {
+            var resumo = document.getElementById("resumo");
+            var verMaisLink = document.getElementById("ver-mais");
+
+            if (resumo.classList.contains("expandido")) {
+              resumo.classList.remove("expandido");
+              verMaisLink.textContent = " ver mais";
+              document.getElementById("complete-text").innerHTML =
+                "...";
+            } else {
+              resumo.classList.add("expandido");
+              verMaisLink.textContent = " ver menos";
+              document.getElementById("complete-text").innerHTML =
+                " Constatou-se diferença (p<0,01) no teor de fenóis de creme e gelatina, obtendo-se respectivamente para receitas convencionais e funcionais 602±182,9 e 1878±195,3 para gelatina e 1167,6±34,7 e 2803,6±512,9 para creme expressos em µg Eq AG/g de amostra, refletindo maior atividade antioxidante em ABTS, FRAP e DPPH. Biomassa e yacon demonstraram teor de frutanos de 0,17g/100 e 40,74g/100g. A contagem de BB12 e La5 foram respectivamente 9,0x10¹¹ e 3,1x10¹¹ UFC/mL no meio contendo biomassa e 5,33x10¹¹ e 6,33x1010 UFC/mL em meio contendo yacon. Aprovou-se bolo de laranja e salada de frutas na análise de restos e escala hedônica, obtendo-se respectivamente, 98,27% e 91,26% para a primeira preparação e 91,86% e 89,93% para a segunda. Comentários na ficha de escala hedônica mostraram que o paladar condicionado ao sabor excessivamente doce e expectativa de experimentar receitas semelhantes às convencionais culminaram neste desfecho. Conclui-se que a inserção de ingredientes funcionais em receitas com as quais os alunos estavam familiarizados não garantiu a aceitabilidade de todas as formulações. Estratégias de educação alimentar e nutricional concomitantes à oferta de alimentação saudável mostram-se necessárias.";
+            }
+          }
+
+        </script>
 
         <div class="card">
           <h5 class="card-header">Discussões</h5>

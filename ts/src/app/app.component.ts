@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DevChuva';
+  @ViewChild('resumo') resumoElement: ElementRef;
+
+  toggleResumo() {
+    const resumo = this.resumoElement.nativeElement;
+    resumo.classList.toggle('expandido');
+  }
 }
+
