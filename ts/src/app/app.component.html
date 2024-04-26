@@ -226,14 +226,10 @@
       border: 1px solid rgb(210, 210, 210);
     }
 
-    .btn-criar-novo-topico {
-      border-radius: 5px;
+    .btn-create-new-topic {
       margin-top: 50px;
       width: 250px;
       height: 40px;
-      background: linear-gradient(0deg, #ED7839 0%, #FFB455 100%);
-      color: white;
-      border: none;
     }
 
     .aguardando-feedback {
@@ -490,6 +486,66 @@
         </div>
       </div>
 
+      <script>
+        function verMais() {
+          var resumo = document.getElementById("resumo");
+          var verMaisLink = document.getElementById("ver-mais");
+
+          if (resumo.classList.contains("expandido")) {
+            resumo.classList.remove("expandido");
+            verMaisLink.textContent = " ver mais";
+            document.getElementById("complete-text").innerHTML =
+              "...";
+          } else {
+            resumo.classList.add("expandido");
+            verMaisLink.textContent = " ver menos";
+            document.getElementById("complete-text").innerHTML =
+              " Constatou-se diferença (p<0,01) no teor de fenóis de creme e gelatina, obtendo-se respectivamente para receitas convencionais e funcionais 602±182,9 e 1878±195,3 para gelatina e 1167,6±34,7 e 2803,6±512,9 para creme expressos em µg Eq AG/g de amostra, refletindo maior atividade antioxidante em ABTS, FRAP e DPPH. Biomassa e yacon demonstraram teor de frutanos de 0,17g/100 e 40,74g/100g. A contagem de BB12 e La5 foram respectivamente 9,0x10¹¹ e 3,1x10¹¹ UFC/mL no meio contendo biomassa e 5,33x10¹¹ e 6,33x1010 UFC/mL em meio contendo yacon. Aprovou-se bolo de laranja e salada de frutas na análise de restos e escala hedônica, obtendo-se respectivamente, 98,27% e 91,26% para a primeira preparação e 91,86% e 89,93% para a segunda. Comentários na ficha de escala hedônica mostraram que o paladar condicionado ao sabor excessivamente doce e expectativa de experimentar receitas semelhantes às convencionais culminaram neste desfecho. Conclui-se que a inserção de ingredientes funcionais em receitas com as quais os alunos estavam familiarizados não garantiu a aceitabilidade de todas as formulações. Estratégias de educação alimentar e nutricional concomitantes à oferta de alimentação saudável mostram-se necessárias.";
+          }
+        }
+
+        function criarTopico() {
+          var divTopico = document.createElement("div");
+          divTopico.setAttribute("style", "text-align: start;");
+
+          divTopico.innerHTML =
+            `<p>Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!</p>
+            <h6>Assunto</h6>
+            <input type="text" style="width: 100%; padding: 10px;" placeholder="Defina um tópico sucinto para notificar os autores...">
+            <h6>Conteúdo</h6>
+            <textarea rows="5" style="width: 100%;"></textarea>
+            <div class="div-enviar"><button class="btn-enviar" onclick="enviar()">Enviar</button></div>`;
+          var criarTopicoDiv = document.getElementById("criar-topico");
+          criarTopicoDiv.innerHTML = '';
+          criarTopicoDiv.appendChild(divTopico);
+        }
+
+        function enviar() {
+          var divTopico = document.createElement("div");
+          divTopico.setAttribute("style", "text-align: center;");
+
+          divTopico.innerHTML =
+            `<h6>Seu tópico foi enviado com sucesso! :D</h6>
+              <p>Agradecemos por sua contribuição, um notificação será enviada ao seu email assim que seu tópico for respondido!</p>
+              <a href="#" style="color: #FFB455;">Descubra outros trabalhos!</a>
+              <br>
+              <button class="btn btn-create-topic btn-create-new-topic" onclick="criarTopico()">criar novo tópico</button>
+              <div class="aguardando-feedback">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-check2-all" viewBox="0 0 16 16">
+                <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0"/>
+                <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708"/>
+                </svg>
+                <h5>Aguardando feedback dos autores</h5>
+                <a href="#" style="color: #FFB455;">Editar tópico</a>
+              </div>
+              `;
+          var criarTopicoDiv = document.getElementById("criar-topico");
+          criarTopicoDiv.innerHTML = '';
+          criarTopicoDiv.appendChild(divTopico);
+        }
+
+      </script>
+
       <div class="row mb-md">
         <div class="card">
           <h5 class="card-header">Resumo</h5>
@@ -511,26 +567,6 @@
           </div>
         </div>
 
-        <script>
-          function verMais() {
-            var resumo = document.getElementById("resumo");
-            var verMaisLink = document.getElementById("ver-mais");
-
-            if (resumo.classList.contains("expandido")) {
-              resumo.classList.remove("expandido");
-              verMaisLink.textContent = " ver mais";
-              document.getElementById("complete-text").innerHTML =
-                "...";
-            } else {
-              resumo.classList.add("expandido");
-              verMaisLink.textContent = " ver menos";
-              document.getElementById("complete-text").innerHTML =
-                " Constatou-se diferença (p<0,01) no teor de fenóis de creme e gelatina, obtendo-se respectivamente para receitas convencionais e funcionais 602±182,9 e 1878±195,3 para gelatina e 1167,6±34,7 e 2803,6±512,9 para creme expressos em µg Eq AG/g de amostra, refletindo maior atividade antioxidante em ABTS, FRAP e DPPH. Biomassa e yacon demonstraram teor de frutanos de 0,17g/100 e 40,74g/100g. A contagem de BB12 e La5 foram respectivamente 9,0x10¹¹ e 3,1x10¹¹ UFC/mL no meio contendo biomassa e 5,33x10¹¹ e 6,33x1010 UFC/mL em meio contendo yacon. Aprovou-se bolo de laranja e salada de frutas na análise de restos e escala hedônica, obtendo-se respectivamente, 98,27% e 91,26% para a primeira preparação e 91,86% e 89,93% para a segunda. Comentários na ficha de escala hedônica mostraram que o paladar condicionado ao sabor excessivamente doce e expectativa de experimentar receitas semelhantes às convencionais culminaram neste desfecho. Conclui-se que a inserção de ingredientes funcionais em receitas com as quais os alunos estavam familiarizados não garantiu a aceitabilidade de todas as formulações. Estratégias de educação alimentar e nutricional concomitantes à oferta de alimentação saudável mostram-se necessárias.";
-            }
-          }
-
-        </script>
-
         <div class="card">
           <h5 class="card-header">Discussões</h5>
           <div class="card-body" style="text-align: center;">
@@ -546,49 +582,6 @@
                 </svg> criar tópico
               </button>
             </div>
-
-            <script>
-              function criarTopico() {
-                var divTopico = document.createElement("div");
-                divTopico.setAttribute("style", "text-align: start;");
-
-                divTopico.innerHTML =
-                  `<p>Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!</p>
-              <h6>Assunto</h6>
-              <input type="text" style="width: 100%; padding: 10px;" placeholder="Defina um tópico sucinto para notificar os autores...">
-              <h6>Conteúdo</h6>
-              <textarea rows="5" style="width: 100%;"></textarea>
-              <div class="div-enviar"><button class="btn-enviar" onclick="enviar()">Enviar</button></div>`;
-                var criarTopicoDiv = document.getElementById("criar-topico");
-                criarTopicoDiv.innerHTML = '';
-                criarTopicoDiv.appendChild(divTopico);
-              }
-
-              function enviar() {
-                var divTopico = document.createElement("div");
-                divTopico.setAttribute("style", "text-align: center;");
-
-                divTopico.innerHTML =
-                  `<h6>Seu tópico foi enviado com sucesso! :D</h6>
-                <p>Agradecemos por sua contribuição, um notificação será enviada ao seu email assim que seu tópico for respondido!</p>
-                <a href="#" style="color: #FFB455;">Descubra outros trabalhos!</a>
-                <br>
-                <button class="btn-criar-novo-topico" style="">criar novo tópico</button>
-                <div class="aguardando-feedback">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-check2-all" viewBox="0 0 16 16">
-                  <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0"/>
-                  <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708"/>
-                  </svg>
-                  <h5>Aguardando feedback dos autores</h5>
-                  <a href="#" style="color: #FFB455;">Editar tópico</a>
-                </div>
-                `;
-                var criarTopicoDiv = document.getElementById("criar-topico");
-                criarTopicoDiv.innerHTML = '';
-                criarTopicoDiv.appendChild(divTopico);
-              }
-
-            </script>
 
             <div class="answered-topic ops-topic-subject">
               <div class="card-body" style="text-align: start; padding-left: 25px;">
