@@ -184,9 +184,10 @@
       overflow: hidden;
     }
 
-    .ver-mais {
+    .btn-show-more {
       color: #ED7839;
       cursor: pointer;
+      text-decoration: none;
     }
 
     .card-text {
@@ -203,7 +204,7 @@
       color: #ED7839;
     }
 
-    .button-criar-topico {
+    .btn-create-topic {
       color: white;
       background: linear-gradient(0deg, #ED7839 0%, #FFB455 100%);
     }
@@ -243,7 +244,7 @@
       background-color: rgb(240, 240, 240);
     }
 
-    .card-pergunta {
+    .answered-topic {
       align-items: left;
       border: 1px solid rgb(210, 210, 210);
       border-radius: 5px;
@@ -505,7 +506,7 @@
               probiótica inoculando-se Lactobacillus acidophilus La5 e Bifidobacterium bifidum BB12 em meios de
               cultura MRS substituindo a fonte de açúcar pelo ingrediente cuja atividade probiótica buscou-se
               determinar. Aplicou-se teste de aceitabilidade por resto-ingestão e escala hedônica.<span
-                id="complete-text">...</span><span class="ver-mais" onclick="verMais()" id="ver-mais"> ver mais</span>
+                id="complete-text">...</span><a class="btn-show-more" onclick="verMais()" id="ver-mais"> ver mais</a>
             </p>
           </div>
         </div>
@@ -537,7 +538,7 @@
               <h6>Compartilhe suas ideias ou dúvidas com os autores!</h6>
               <p>Sabia que o maior estímulo no desenvolvimento científico é a curiosidade? Deixe seus questionamentos ou
                 sugestões para o autor!</p>
-              <button class="btn button-criar-topico" onclick="criarTopico()">
+              <button class="btn btn-create-topic" onclick="criarTopico()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
                   viewBox="0 0 16 16">
                   <path fill-rule="evenodd"
@@ -589,7 +590,7 @@
 
             </script>
 
-            <div class="card-pergunta">
+            <div class="answered-topic ops-topic-subject">
               <div class="card-body" style="text-align: start; padding-left: 25px;">
                 <h6 class="card-title">Assunto da pergunta aparece aqui</h6>
                 <p class="card-subtitle mb-2 text-body-secondary">Carlos Henrique Santos</p>
@@ -610,7 +611,7 @@
                 <a href="#" class="card-link" style="text-decoration: none; color: rgb(99, 99, 99);">1 resposta</a>
               </div>
             </div>
-            <div class="card-pergunta">
+            <div class="answered-topic ops-topic-subject">
               <div class="card-body" style="text-align: start; padding-left: 25px;">
                 <h6 class="card-title">Assunto da pergunta aparece aqui</h6>
                 <p class="card-subtitle mb-2 text-body-secondary">Carlos Henrique Santos</p>
