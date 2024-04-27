@@ -509,12 +509,14 @@
           divTopico.setAttribute("style", "text-align: start;");
 
           divTopico.innerHTML =
-            `<p>Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!</p>
-            <h6>Assunto</h6>
-            <input type="text" style="width: 100%; padding: 10px;" placeholder="Defina um tópico sucinto para notificar os autores...">
-            <h6>Conteúdo</h6>
-            <textarea rows="5" style="width: 100%;"></textarea>
-            <div class="div-enviar"><button class="btn-enviar" onclick="enviar()">Enviar</button></div>`;
+            `<form>
+              <p>Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!</p>
+              <h6>Assunto</h6>
+              <input type="text" style="width: 100%; padding: 10px;" placeholder="Defina um tópico sucinto para notificar os autores...">
+              <h6>Conteúdo</h6>
+              <textarea rows="5" style="width: 100%;"></textarea>
+              <div class="div-enviar"><button class="btn-enviar" onclick="enviar()">Enviar</button></div>
+            <form>`;
           var criarTopicoDiv = document.getElementById("criar-topico");
           criarTopicoDiv.innerHTML = '';
           criarTopicoDiv.appendChild(divTopico);
@@ -542,6 +544,23 @@
           var criarTopicoDiv = document.getElementById("criar-topico");
           criarTopicoDiv.innerHTML = '';
           criarTopicoDiv.appendChild(divTopico);
+        }
+
+        function seeComments() {
+          var divComments = document.createElement("div");
+          divComments.setAttribute("style", "text-align: start; border: 1px solid rgb(210, 210, 210); padding: 20px;");
+          var criarCommentsDiv = document.getElementById("mostrar-comentarios");
+
+          if (criarCommentsDiv.classList.contains("expandido")) {
+            criarCommentsDiv.classList.remove("expandido");
+            criarCommentsDiv.innerHTML = '';
+          } else {
+            criarCommentsDiv.classList.add("expandido");
+            divComments.innerHTML =
+              `<strong class="card-subtitle mb-2 text-body-secondary">Adriano da Silva</strong>
+              <p class="card-text">Resposta do autor é aqui. Relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.</p>`;
+            criarCommentsDiv.appendChild(divComments);
+          }
         }
 
       </script>
@@ -583,10 +602,10 @@
               </button>
             </div>
 
-            <div class="answered-topic ops-topic-subject">
+            <div class="answered-topic">
               <div class="card-body" style="text-align: start; padding-left: 25px;">
-                <h6 class="card-title">Assunto da pergunta aparece aqui</h6>
-                <p class="card-subtitle mb-2 text-body-secondary">Carlos Henrique Santos</p>
+                <h6 class="card-title ops-topic-subject">Assunto da pergunta aparece aqui</h6>
+                <strong class="card-subtitle mb-2 text-body-secondary">Carlos Henrique Santos</strong>
                 <p class="card-text">Comecinho da pergunta aparece aqui resente relato inscreve-se no campo da análise
                   da dimensão e impacto de processo formativo situado impacto de processo formativo processo...</p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" color="#ED7839" fill="currentColor"
@@ -604,10 +623,10 @@
                 <a href="#" class="card-link" style="text-decoration: none; color: rgb(99, 99, 99);">1 resposta</a>
               </div>
             </div>
-            <div class="answered-topic ops-topic-subject">
+            <div class="answered-topic " onclick="seeComments()">
               <div class="card-body" style="text-align: start; padding-left: 25px;">
-                <h6 class="card-title">Assunto da pergunta aparece aqui</h6>
-                <p class="card-subtitle mb-2 text-body-secondary">Carlos Henrique Santos</p>
+                <h6 class="card-title ops-topic-subject">Assunto da pergunta aparece aqui</h6>
+                <strong class="card-subtitle mb-2 text-body-secondary">Carlos Henrique Santos</strong>
                 <p class="card-text">Comecinho da pergunta aparece aqui resente relato inscreve-se no campo da análise
                   da dimensão e impacto de processo formativo situado impacto de processo formativo processo...</p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" color="#ED7839" fill="currentColor"
@@ -624,6 +643,7 @@
                   style="text-decoration: none; color: rgb(99, 99, 99); margin-left: 10px;">1 like</a>
                 <a href="#" class="card-link" style="text-decoration: none; color: rgb(99, 99, 99);">1 resposta</a>
               </div>
+              <div id="mostrar-comentarios"></div>
             </div>
           </div>
         </div>
